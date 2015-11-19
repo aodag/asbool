@@ -2,6 +2,9 @@
 asbool
 ==================
 
+.. image:: https://travis-ci.org/aodag/asbool.svg?branch=master
+               :target: https://travis-ci.org/aodag/asbool
+
 ``asbool`` is simple converter from ``str`` to ``bool``.
 
 INSTALL
