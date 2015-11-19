@@ -1,0 +1,30 @@
+from setuptools import setup, find_packages
+
+
+__version__ = '0.1'
+__author__ = 'Atsushi Odagiri'
+__author_email__ = 'aodagx@gmail.com'
+
+
+requires = [
+    "six",
+]
+
+tests_require = [
+    "pytest",
+    "pytest-cov",
+    "testfixtures",
+]
+
+setup(
+    name='asbool',
+    packages=find_packages(),
+    version=__version__,
+    author=__author__,
+    author_email=__author_email__,
+    install_requires=requires,
+    tests_require=tests_require,
+    extras_require={
+        "testing": tests_require,
+    },
+)
