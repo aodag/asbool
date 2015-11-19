@@ -46,3 +46,24 @@ class TestAsBoolConverter(object):
         converter = target(true_values, false_values)
         result = converter(input)
         assert result == expected
+
+
+@pytest.mark.parametrize(
+    "input, expected",
+    [
+        ('TRUE', True),
+        ('t', True),
+        ('y', True),
+        ('yes', True),
+        (1, True),
+        ('FALSE', False),
+        ('f', False),
+        ('n', False),
+        ('no', False),
+        (0, False),
+    ]
+)
+def test_asbool(input, expected):
+    from asbool import asbool
+    result = asbool(input)
+    assert result == expected
