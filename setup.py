@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
+import os
 
-
+here = os.path.dirname(__file__)
 __version__ = '0.1'
 __author__ = 'Atsushi Odagiri'
 __author_email__ = 'aodagx@gmail.com'
@@ -16,9 +17,21 @@ tests_require = [
     "testfixtures",
 ]
 
+
+def _read(name):
+    try:
+        with open(os.path.join(here, name)) as f:
+            return f.read()
+    except Exception:
+        return ''
+
+
 setup(
     name='asbool',
     packages=find_packages(),
+    url='https://github.com/aodag/asbool',
+    description='simple converter from ``str`` to ``bool``',
+    long_description=_read('README.rst'),
     version=__version__,
     author=__author__,
     author_email=__author_email__,
