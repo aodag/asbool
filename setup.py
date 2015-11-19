@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import os
 
 here = os.path.dirname(__file__)
-__version__ = '0.1'
+__version__ = '0.1.1'
 __author__ = 'Atsushi Odagiri'
 __author_email__ = 'aodagx@gmail.com'
 
