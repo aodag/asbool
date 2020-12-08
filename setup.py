@@ -40,6 +40,9 @@ setup(
     extras_require={
         "testing": tests_require,
     },
+    package_data={
+        "asbool": ["py.typed"],
+    },
     license="MIT",
     classifiers=[
         "Programming Language :: Python :: 2.7",
