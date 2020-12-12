@@ -3,17 +3,16 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    jobs:
-      strategy:
-        matrix:
-          python-version: [2.7, 3.5, 3.6, 3.7, 3.8, 3.9]
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-python@v2
-          with:
-            python-version: ${{ matrix.python-version }}
-        - name: install nox
-          run: pip install nox
-        - name: run nox
-          run: nox
+    strategy:
+      matrix:
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8, 3.9]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: install nox
+        run: pip install nox
+      - name: run nox
+        run: nox
 
