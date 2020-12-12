@@ -1,5 +1,4 @@
 import pytest
-from testfixtures import ShouldRaise
 
 
 class TestAsBoolConverter(object):
@@ -29,8 +28,9 @@ class TestAsBoolConverter(object):
 
     def test_value_error(self, target):
         converter = target(["t"], ["f"])
-        with ShouldRaise(ValueError("TRUE")):
+        with pytest.raises(ValueError) as excinfo:
             converter("TRUE")
+        assert "TRUE" in str(excinfo.value)
 
     @pytest.mark.parametrize(
         "true_values, false_values, input, expected",
