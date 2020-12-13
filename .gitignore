@@ -4,3 +4,5 @@
 *.egg-info
 *.py[co]
 .tox
+build
+dist

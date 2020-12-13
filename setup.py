@@ -32,6 +32,7 @@ setup(
     description='simple converter from ``str`` to ``bool``',
     long_description=_read('README.rst'),
     version=__version__,
+    use_scm_version=True,
     author=__author__,
     author_email=__author_email__,
     install_requires=requires,
